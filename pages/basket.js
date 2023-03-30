@@ -42,8 +42,8 @@ function Basket() {
         theme: "light",
       });
     useEffect(() => {
-        dispatch(totalCalculater())
-        dispatch(amountCalculator())
+        dispatch(totalCalculater());
+        dispatch(amountCalculator());
     }, [basket]);
 
     return (<>

@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 
 const initialState = {
@@ -8,7 +8,7 @@ const initialState = {
         { url: 'https://cdn.shopify.com/s/files/1/0210/2968/3222/articles/trending_products_to_sell_in_India_ad8fc9e0-5052-44bf-bd93-7bec4335f5ee.jpg?v=1647462399', title: 'e-commerce' }
     ],
     currentIndex: 0
-}
+};
 
 const carouselSlice = createSlice({
     name: 'carousel',
@@ -25,7 +25,7 @@ const carouselSlice = createSlice({
             state.currentIndex = newIndex;
         }
     }
-})
+});
 
 export default carouselSlice.reducer;
 export const { goToPrevious, goToNext } = carouselSlice.actions;

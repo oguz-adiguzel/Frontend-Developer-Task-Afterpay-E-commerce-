@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import logo from '../public/images/afterpay-logo.png'
+import logo from '../public/images/afterpay-logo.png';
 
 function Footer() {
 

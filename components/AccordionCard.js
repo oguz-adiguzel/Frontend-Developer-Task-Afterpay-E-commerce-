@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggle } from '@/features/accordion/accordionSlice';
 
 function Accordion({ item, index }) {
-    const { selected } = useSelector((store) => store.accordion)
-    const dispatch = useDispatch()
+    const { selected } = useSelector((store) => store.accordion);
+    const dispatch = useDispatch();
 
     return (<>
         <div className='w-full lg:w-[846px] h-16 bg-[#E5E7EB] flex items-center justify-between'>

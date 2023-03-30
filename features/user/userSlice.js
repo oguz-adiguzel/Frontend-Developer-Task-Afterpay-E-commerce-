@@ -8,7 +8,7 @@ const initialState = {
     password: '',
     userData: [],
     login: false
-}
+};
 
 export const getUser = createAsyncThunk('user/getUser',
     async (name, thunkApi) => {
@@ -19,7 +19,7 @@ export const getUser = createAsyncThunk('user/getUser',
             return thunkApi.rejectWithValue('something went wrong')
         }
     }
-)
+);
 
 const userSlice = createSlice({
     name: 'user',
@@ -42,7 +42,7 @@ const userSlice = createSlice({
             state.email = '';
             state.password = '';
             state.login = false;
-            alert('Çıkış Yapıldı')
+            alert('Çıkış Yapıldı');
         }
     },
     extraReducers: {

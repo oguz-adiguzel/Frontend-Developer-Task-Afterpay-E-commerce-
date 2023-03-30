@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import { Inter } from 'next/font/google'
+import Head from 'next/head';
+import { Inter } from 'next/font/google';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,9 +13,9 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
-  const { productItems, basket } = useSelector((store) => store.product)
-  const { slides, currentIndex } = useSelector((store) => store.carousel)
-  const { accordionData } = useSelector((store) => store.accordion)
+  const { productItems, basket } = useSelector((store) => store.product);
+  const { slides, currentIndex } = useSelector((store) => store.carousel);
+  const { accordionData } = useSelector((store) => store.accordion);
   const dispatch = useDispatch();
   const notify = () => toast.success('Ürün Sepete Eklendi', {
     position: "top-right",

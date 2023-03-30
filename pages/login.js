@@ -5,15 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 
 function Login() {
     const dispatch = useDispatch();
-    const { email, password, login } = useSelector((store) => store.user)
+    const { email, password, login } = useSelector((store) => store.user);
     const router = useRouter();
     useEffect(() => {
         if (login) {
-            router.push('/')
-        }
+            router.push('/');
+        };
     }, [login])
     useEffect(() => {
-        dispatch(getUser('kullanıcılar'))
+        dispatch(getUser('kullanıcılar'));
     }, []);
     return (<>
         <div className="container flex justify-center">

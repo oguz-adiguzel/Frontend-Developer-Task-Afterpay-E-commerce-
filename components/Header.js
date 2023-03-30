@@ -1,4 +1,4 @@
-import logo from '../public/images/afterpay-logo.png'
+import logo from '../public/images/afterpay-logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faUser, faHeart, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
@@ -10,11 +10,11 @@ import { exit } from '@/features/user/userSlice';
 
 function Header() {
     const { amount, basket } = useSelector((store) => store.product);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const { login } = useSelector((store) => store.user);
 
     useEffect(() => {
-        dispatch(amountCalculator())
+        dispatch(amountCalculator());
     }, [basket]);
 
     return (<>

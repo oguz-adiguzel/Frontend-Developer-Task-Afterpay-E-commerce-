@@ -3,19 +3,32 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FormattedNumber } from 'react-intl';
 import { addBasket } from "@/features/product/productSlice";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 function ProductItem() {
-    const { productItems } = useSelector((store) => store.product)
+    const { productItems } = useSelector((store) => store.product);
     const [product, setProduct] = useState();
-    const dispatch = useDispatch()
-    const router = useRouter()
-    const { id } = router.query
+    const dispatch = useDispatch();
+    const router = useRouter();
+    const { id } = router.query;
+    const notify = () => toast.success('Ürün Sepete Eklendi', {
+        position: "top-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
 
     useEffect(() => {
-        setProduct(productItems.find((p) => p.id === Number(id)))
+        setProduct(productItems.find((p) => p.id === Number(id)));
     }, [id]);
 
     return (<>
+        <ToastContainer />
         <div className="container">
             <div className="w-full grid px-5 lg:px-0 grid-cols-1 lg:grid-cols-2 mt-20">
                 {/* Product İmage */}
@@ -28,7 +41,10 @@ function ProductItem() {
                     <h2 className="text-2xl font-bold">{product && product.title}</h2>
                     <p className="text-md text-gray-400 mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at varius dolor. Vivamus quis placerat diam. Suspendisse ut turpis in nulla pharetra pharetra id non orci. Sed volutpat orci sed cursus ornare. Sed tristique, est nec posuere efficitur, metus justo.</p>
                     <p className="text-2xl text-red-600 font-bold mt-3"><FormattedNumber value={product && product.price} style={`currency`} currency="TRY" /></p>
-                    <button onClick={() => dispatch(addBasket(product.id))} className="bg-afterpay-orange text-white px-9 py-3 rounded-full mt-3">Sepete Ekle</button>
+                    <button onClick={() =>{ 
+                        dispatch(addBasket(product.id));
+                        notify();
+                    }} className="bg-afterpay-orange text-white px-9 py-3 rounded-full mt-3">Sepete Ekle</button>
                 </div>
             </div>
         </div>

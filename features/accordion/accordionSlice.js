@@ -24,7 +24,7 @@ const initialState = {
         }
     ],
     selected: null,
-}
+};
 
 const accordionSlice = createSlice({
     name: 'accordion',
@@ -38,7 +38,7 @@ const accordionSlice = createSlice({
             }
         }
     }
-})
+});
 
 export default accordionSlice.reducer;
 export const { accordionChange, toggle } = accordionSlice.actions;

@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 
 function ProductCard({ filteredItem, notify }) {
     const dispatch = useDispatch();
-    const router = useRouter()
+    const router = useRouter();
 
     return (<>
         <div className='product-item w-72 lg:w-full mx-auto'>

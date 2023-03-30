@@ -10,6 +10,5 @@ export const store = configureStore({
         carousel: carouselReducer,
         accordion: accordionReducer,
         user: userReducer,
-    },
-    
-})
+    },   
+});
